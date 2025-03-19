@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CAFC2F2E-0B74-BB1E-76DE-65B0E4482EFF" schemaObject="FD289506-098C-A81A-9490-DC6922A14DE1" name="CUSTOMER">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>CUSTOMER</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:17 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTID" id="34B31B4A-CAC2-166A-B106-10B85A33C34F">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>CUSTID</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:17 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="CF583DAF-650D-5415-DB12-97B7989D2B7B">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:17 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS" id="8C4502CE-4B07-98F3-E901-7A1689FF29C0">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>ADDRESS</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:17 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE" id="8CE2DBDD-0546-76D2-2742-99DF84EAADD8">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>CUSTOMER</sourceObjSchema>
+<sourceObjName>PHONE</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:17 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6529DDC0-DB92-AC19-745C-B6A55A7A9926" schemaObject="FD289506-098C-A81A-9490-DC6922A14DE1" name="CUSTOMER_PK">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>SYS_C006999</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:18 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34B31B4A-CAC2-166A-B106-10B85A33C34F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

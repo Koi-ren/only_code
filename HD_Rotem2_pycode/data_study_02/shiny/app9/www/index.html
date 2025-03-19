@@ -1,0 +1,59 @@
+﻿<html>
+
+<head>
+  <!-- shared위치 : C:\Users\jinsung\Documents\R\win-library\3.2\shiny\www\shared-->
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
+  <script>
+    function data_check(){ // 로그인 처리를 위한 함수
+    	if(document.frm.id.value==""){
+    		alert("아이디를 입력하세요.");
+    		document.frm.id.focus(); // 커서 이동
+    		return false;// 리턴 값(더이상 태그 수행 금지)
+    	}
+      if($("#pwd").val()==""){
+          alert("비번을 입력하세요.");
+    	    $("#pwd").focus(); // 커서 이동
+          return false;// 리턴 값(더이상 태그 수행 금지)	
+      }        
+     alert("로그인 성공");	
+	}  
+  </script>
+</head>
+ 
+<body>
+
+  <h1>HTML UI</h1>
+ 
+  <p>
+    <label>Distribution type:</label><br />
+    <select name="dist">
+      <option value="norm">Normal</option>
+      <option value="unif">Uniform</option>
+      <option value="lnorm">Log-normal</option>
+      <option value="exp">Exponential</option>
+    </select> 
+  </p>
+ 
+  <p>
+    <label>Number of observations:</label><br /> 
+    <input type="number" name="n" value="500" min="1" max="1000" />
+  </p>
+  <form name="frm">  
+   <p>
+    <input type="text" name="id" id="id" size="10"/>
+    <input type="password" name="pwd" id="pwd" size="10"/>
+    <!-- data 체크 버튼 추가 -->
+    <input type="submit" value="전송" onclick="return data_check()">
+    </p>
+  </form>
+  <pre id="summary" class="shiny-text-output"></pre> 
+  
+  <div id="plot" class="shiny-plot-output" 
+       style="width: 100%; height: 400px"></div> 
+  
+  <div id="table" class="shiny-html-output"></div>
+ 
+</body>
+</html>

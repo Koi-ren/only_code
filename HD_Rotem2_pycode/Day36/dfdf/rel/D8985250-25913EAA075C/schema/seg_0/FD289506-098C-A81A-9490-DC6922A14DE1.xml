@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="MADANG" directorySegmentName="seg_0" id="FD289506-098C-A81A-9490-DC6922A14DE1">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:10 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</SchemaObject>

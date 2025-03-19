@@ -1,0 +1,5 @@
+1. test1에서 정수형으로 숫자 3개를 입력받는다
+2. test1에서 test2의 arr함수를 불러와 1번에서 받은 정수 3개를 입력해준다
+3. test2의 arr함수는 test3의 array_mid라는 초기화된 함수를 불러와 
+   2에서 입력받은 정수를 원소단위로 추가 후 return 한다.
+4. test2에서 return받은 배열을 print로 표시한다.

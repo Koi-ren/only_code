@@ -1,0 +1,37 @@
+<-- 문장 정리 -->
+
+01: 정면
+10: 우측
+11: 좌측
+
+0: 감지 X
+1: 감지 O
+
+rospy.loginfo("")
+
+011 100 110: Obstacle detected 12 meters ahead, directly in front. Prepare to decelerate.
+011 100 111: Obstacles detected 12 meters ahead, directly in front and to the left. Execute a right turn.
+011 101 110: Obstacles detected 12 meters ahead, directly in front and to the right. Execute a left turn.
+011 101 111: Obstacle detected 12 meters directly ahead. Prepare to stop or execute a right maneuver.
+010 100 110: No obstacles detected 12 meters ahead. Continue forward.
+010 100 111: Obstacle detected to the left 12 meters ahead. Maneuver to the right.
+010 101 110: Obstacle detected to the right 12 meters ahead. Maneuver to the left.
+010 101 111: Obstacles detected on both left and right sides 12 meters ahead. Prepare for slow movement and maneuvering, prepare for a reverse maneuver.
+
+
+if(mid_2 == 1) and (right_2 == 0) and (left_2 == 0):
+rospy.loginfo("Obstacle detected 10 ~ 12 meters ahead, directly in front. Prepare to decelerate.")
+if(mid_2 == 1) and (right_2 == 0) and (left_2 == 1):
+rospy.loginfo("Obstacles detected 10 ~ 12 meters ahead, directly in front and to the left. Execute a right turn.")
+if(mid_2 == 1) and (right_2 == 1) and (left_2 == 0):
+rospy.loginfo("Obstacles detected 10 ~ 12 meters ahead, directly in front and to the right. Execute a left turn.")
+if(mid_2 == 1) and (right_2 == 1) and (left_2 == 1):
+rospy.loginfo("Obstacle detected 10 ~ 12 meters directly ahead. Prepare to stop or execute a right maneuver.")
+if(mid_2 == 0) and (right_2 == 0) and (left_2 == 0):
+rospy.loginfo("No obstacles detected 10 ~ 12 meters ahead. Continue forward.")
+if(mid_2 == 0) and (right_2 == 0) and (left_2 == 1):
+rospy.loginfo("Obstacle detected to the left 10 ~ 12 meters ahead. Maneuver to the right.")
+if(mid_2 == 0) and (right_2 == 1) and (left_2 == 0):
+rospy.loginfo("Obstacle detected to the right 10 ~ 12 meters ahead. Maneuver to the left.")
+if(mid_2 == 0) and (right_2 == 1) and (left_2 == 1):
+rospy.loginfo("Obstacles detected on both left and right sides 10 ~ 12 meters ahead. Prepare for slow movement and maneuvering, prepare for a reverse maneuver.")

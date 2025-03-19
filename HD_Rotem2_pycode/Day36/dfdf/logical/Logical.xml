@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="FA66AADD-EFD2-5077-18DF-C89FF13E1145" mainViewID="6A6CA983-A1C1-2ED2-4FBA-CE50CE9C6090">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-11 02:02:56 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

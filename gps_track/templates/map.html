@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time GPS Map</title>
+    <!-- Leaflet CSS 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JS 추가 -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            height: 600px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([37.7749, -122.4194], 13);
+
+        // OpenStreetMap 타일 레이어 추가
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Flask에서 전달된 coordinates 사용하여 PolyLine 그리기
+        var coordinates = {{ coordinates|tojson }};
+        L.polyline(coordinates, {color: 'red'}).addTo(map);
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student sid ="1">
+        <sname>홍길동</sname>
+        <dept>컴퓨터</dept>
+    </student>
+    <student sid ="2">
+        <sname>김길동</sname>
+        <dept>경영학</dept>
+    </student>
+</students>

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="3D8F9A3E-F885-1643-9D4B-660532AE3302" name="SCOTT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.SchemaObject" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="C7182A86-B406-484E-837A-1FCE1D049BA6" name="BONUS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="E459CF24-670F-2DC3-BA91-708BBAA54F04" name="DEPT" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="35E8DE57-B15E-E681-24CA-963706FCC929" name="DUMMY" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="65EEC0F9-B982-9E24-3DC4-CDFDCD014597" name="EMP" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="0C659024-20B1-128F-DB76-60F986DF41DC" name="SALGRADE" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="88B09691-4E55-51A7-13D0-62FCD5E3F258" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

@@ -1,0 +1,56 @@
+import openpyxl
+import folium
+
+# 엑셀 파일 경로 설정
+raw_save_path = "C:/Users/plane/Desktop/park_ws/gps_track/raw_coordinates.xlsx"
+corrected_save_path = "C:/Users/plane/Desktop/park_ws/gps_track/corrected_coordinates.xlsx"
+
+# 맵 초기화 (중심점을 첫번째 좌표로 설정)
+initial_latitude = 35.1204103  # 초기 위치 설정
+initial_longitude = 129.100915
+
+# Folium 맵 생성
+mymap = folium.Map(location=[initial_latitude, initial_longitude], zoom_start=15)
+
+# 좌표를 지도에 표시하는 함수
+def plot_coordinates(sheet, color, tooltip):
+    for row in sheet.iter_rows(min_row=2, values_only=True):
+        point_number, latitude, longitude, altitude, distance, bearing = row
+
+        # 좌표값이 None이거나 유효하지 않은 경우 무시
+        if latitude is None or longitude is None:
+            continue
+
+        try:
+            latitude = float(latitude)
+            longitude = float(longitude)
+        except ValueError:
+            continue  # 좌표값이 숫자가 아닌 경우 무시
+
+        folium.CircleMarker(
+            location=[latitude, longitude],
+            radius=5,
+            color=color,
+            fill=True,
+            fill_opacity=0.8,
+            tooltip=f"{tooltip}: Point {point_number}\nLat: {latitude}, Lon: {longitude}, Alt: {altitude}, Dist: {distance} km, Bearing: {bearing}°"
+        ).add_to(mymap)
+
+# 엑셀 파일 열기
+raw_workbook = openpyxl.load_workbook(raw_save_path)
+raw_sheet = raw_workbook.active
+
+corrected_workbook = openpyxl.load_workbook(corrected_save_path)
+corrected_sheet = corrected_workbook.active
+
+# 원본 좌표 (초록색)
+plot_coordinates(raw_sheet, "green", "Raw Data")
+
+# 보정된 좌표 (붉은색)
+plot_coordinates(corrected_sheet, "red", "Corrected Data")
+
+# 지도를 HTML 파일로 저장
+output_html_path = "C:/Users/plane/Desktop/park_ws/gps_track/gps_coordinates_map.html"
+mymap.save(output_html_path)
+
+print(f"Folium 지도가 '{output_html_path}'에 저장되었습니다.")

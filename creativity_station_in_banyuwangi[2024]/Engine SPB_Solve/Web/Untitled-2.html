@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Switch Button - On</title>
+    <style>
+    body {
+        background: rgb(7, 22, 60);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+    }
+
+    .background-text {
+        font-size: 2.5rem;
+        font-weight: bold;
+        opacity: 0.5;
+        z-index: -1;
+        pointer-events: none;
+        width: 90%;
+        max-width: 800px;
+        margin-bottom: 10px;
+    }
+
+    .sub-text {
+        font-size: 1.2rem;
+        opacity: 0.7;
+        z-index: 1;
+        pointer-events: none;
+        width: 90%;
+        max-width: 800px;
+        margin-bottom: 30px;
+    }
+
+    .form-box {
+        position: relative;
+        margin-top: 50px;
+    }
+
+    .button-box {
+        width: 220px;
+        position: relative;
+        border-radius: 30px;
+        background: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .toggle-label {
+        padding: 10px 40px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        font-size: 1rem;
+        color: #000;
+    }
+
+    #btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 100%;
+        background: #e6bc22;
+        border-radius: 30px;
+        transition: .5s;
+        z-index: 0;
+    }
+
+    .description {
+        margin-top: 30px;
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+    </style>
+</head>
+<body>
+    <div class="background-text">IoT Based Automatic Pressure Control for Biogas System</div>
+    <div class="sub-text">(Kontrol Tekanan Otomatis Berbasis IoT untuk Sistem Biogas)</div>
+
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <label class="toggle-label">Off</label>
+            <label class="toggle-label">On</label>
+        </div>
+    </div>
+
+    <div class="description">Deskripsi ketika dalam posisi On.</div>
+</body>
+</html>

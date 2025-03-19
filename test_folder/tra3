@@ -1,0 +1,25 @@
+print(lines)
+line_image = draw_lines(image, lines) # <---- Add this call.
+
+plt.figure()
+plt.imshow(cropped_image)
+
+plt.figure()
+plt.imshow(cannyed_image)
+plt.show()
+
+  vx, vy, x, y = output[0], output[1], output[2], output[3]
+k = 0
+if (k==0):
+    vx, vy, x, y = 1, 1, 1, 1
+    k+=1
+
+  File "/home/xytron/xycar_ws/src/auto_drive/src/lane_track_drive.py", line 163, in get_line_pos
+    x1, y1, x2, y2 = line[0]
+TypeError: 'int' object has no attribute '__getitem__
+
+
+        save_path = r'C:\Users\plane\Desktop\park_ws\gps_track\map.html'
+        m.save(save_path)
+        print(f"Map saved to: {save_path}")   
+

@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="DEPT" directorySegmentName="seg_0" id="E459CF24-670F-2DC3-BA91-708BBAA54F04">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:52:54 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<schemaObject>3D8F9A3E-F885-1643-9D4B-660532AE3302</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>CC006C59-8E51-1A04-548A-9ED20F564C9C</segment>
+<tableSpace>2A3EEFD5-D89F-B55A-79B2-2906C29F1EA9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DNAME" id="948F7100-D7D9-07FD-D206-0CCF8D52D0CA">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:52:54 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEPTNO" id="9B91EB71-8818-B70B-E668-8A2D2C467882">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:52:54 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOC" id="F146FCF5-4DB1-4045-06B8-845AAECC8317">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:52:54 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev11g>

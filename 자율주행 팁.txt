@@ -1,0 +1,170 @@
+python robotics 깃허브
+
+참고할 것
+
+CV ROI V컷으로 차선인식
+
+ar_drive  핸들 angle *100할것{
+like a
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 3
+#=============================================
+# 함께 사용되는 각종 파이썬 패키지들의 import 선언부
+#=============================================
+import numpy as np
+import cv2, rospy, time, math
+from xycar_msgs.msg import xycar_motor
+from ar_track_alvar_msgs.msg import AlvarMarkers
+
+#=============================================
+# 프로그램에서 사용할 변수, 저장공간 선언부
+#=============================================
+motor = None  # 모터 노드 변수
+Fix_Speed = 16  # 모터 속도 고정 상수값 
+new_angle = 0  # 모터 조향각 초기값
+new_speed = Fix_Speed  # 모터 속도 초기값
+motor_msg = xycar_motor()  # 카메라 토픽 메시지
+ar_msg = {"ID":[],"DX":[],"DZ":[]}  # AR태그 토픽을 담을 변수
+    
+#=============================================
+# 콜백함수 - AR태그 토픽을 처리하는 콜백함수.
+# AR태그 토픽이 도착하면 자동으로 호출되는 함수.
+# 토픽에서 정보를 꺼내 ar_msg 변수에 옮겨 담음.
+#=============================================
+def ar_callback(data):
+    global ar_msg
+
+    # AR태그의 ID값, X 위치값, Z 위치값을 담을 빈 리스트 준비
+    ar_msg["ID"] = []
+    ar_msg["DX"] = []
+    ar_msg["DZ"] = []
+
+    # 발견된 모두 AR태그에 대해서 정보 수집하여 ar_msg 리스트에 담음
+    for i in data.markers:
+        ar_msg["ID"].append(i.id) # AR태그의 ID값
+        ar_msg["DX"].append(i.pose.pose.position.x) # AR태그의 X 위치값
+        ar_msg["DZ"].append(i.pose.pose.position.z) # AR태그의 Z 위치값
+    
+#=============================================
+# 모터 토픽을 발행하는 함수.  
+#=============================================
+def drive(angle, speed):
+    motor_msg.angle = angle
+    motor_msg.speed = speed
+    motor.publish(motor_msg)
+    
+#=============================================
+# 차량을 정차시키는 함수.  
+# 입력으로 지속시간을 받아 그 시간동안 속도=0 토픽을 모터로 보냄
+# 지속시간은 0.1초 단위임. 만약 15이면 1.5초가 됨. 
+#=============================================
+def stop_car(duration):
+    for i in range(int(duration)): 
+        drive(angle=new_angle, speed=0)
+        time.sleep(0.1)
+    
+#=============================================
+# AR 패지키지가 발행하는 토픽을 받아서 
+# 제일 가까이 있는 AR Tag에 적힌 ID 값을 반환함.
+# 추가로 거리값과 좌우치우침값을 함께 반환함.
+#=============================================
+def check_AR():
+    global ar_msg
+
+    if (len(ar_msg["ID"]) == 0):
+        # 새로운 토픽이 없거나 발견된 AR태그가 없으면 리턴
+        return 99, 10.0, 0.0, 0.0  # ID값은 99, 거리값은 10.0, Z위치값은 0.0, X위치값은 0.0으로 반환 
+
+    # 새로 도착한 AR태그에 대해서 아래 작업 수행
+    z_pos = 10.0  # Z위치값을 10미터로 초기화
+    x_pos = 10.0  # X위치값을 10미터로 초기화
+    
+    for i in range(len(ar_msg["ID"])):
+        # 발견된 AR태그 모두에 대해서 조사
+        if(ar_msg["DZ"][i] < z_pos):
+            # 더 가까운 거리에 AR태그가 있으면 그걸 사용
+            id_value = ar_msg["ID"][i]
+            z_pos = ar_msg["DZ"][i]
+            x_pos = ar_msg["DX"][i]
+
+    # ID번호, 거리값(미터), 좌우치우침값(미터) 리턴
+    distance = math.sqrt(z_pos**2 + x_pos**2)  # 거리값은 피타고라스 정리로 계산 
+    return id_value, round(distance,2), round(z_pos,2), round(x_pos,2)
+
+#=============================================
+# 실질적인 메인 함수 
+#=============================================
+def start():
+
+    global motor, new_angle, new_speed
+     
+    AR_DRIVE = 4
+    FINISH = 9
+    drive_mode = AR_DRIVE
+    
+    #=========================================
+    # 노드를 생성하고, 구독/발행할 토픽들을 선언합니다.
+    #=========================================
+    rospy.init_node('AR_Driver')
+    motor = rospy.Publisher('xycar_motor', xycar_motor, queue_size=1)
+    rospy.Subscriber('ar_pose_marker', AlvarMarkers, ar_callback, queue_size=1 )
+
+    #=========================================
+    # 첫번째 토픽이 도착할 때까지 기다립니다.
+    #=========================================
+    rospy.wait_for_message("ar_pose_marker", AlvarMarkers)
+    print("AR detector Ready ----------")
+
+    #=========================================
+    # 메인 루프 
+    #=========================================
+    while not rospy.is_shutdown():
+
+        # ======================================
+        # AR태그를 발견하면 AR 주행을 시작합니다.
+        # ======================================
+        while drive_mode == AR_DRIVE:
+        
+            # 전방에 AR태그가 보이는지 체크합니다.   
+            ar_ID, distance, z_pos, x_pos = check_AR()
+            print("Distance=",distance,"Z_pos=",z_pos," X_pos=",x_pos)
+
+            if (ar_ID == 99):
+                # AR태그가 안 보이면 AR태그를 계속 찾습니다.   
+                continue
+    
+            else:
+                # AR태그가 있는 곳으로 주행합니다. 
+                if (z_pos > 0.2):
+                    # Z값이 20센치 이상이면 핸들 각도를 조종하면서 주행합니다.  
+                    new_angle = int(x_pos*100)
+					
+                else:
+                    # Z값이 20센치 이하이면 차량을 세우고 FINISH 모드로 넘어갑니다.     
+                    new_angle = 0
+                    new_speed = 0                      
+                    drive_mode = FINISH  
+                    print ("----- Parking completed... -----")
+
+            drive(new_angle, new_speed)
+
+        # ======================================
+        # 주행을 끝냅니다. 
+        # ======================================
+        if drive_mode == FINISH:
+
+            # 차량을 정지시키고 모든 작업을 끝냅니다.
+            stop_car(1)
+            time.sleep(2)
+            print ("----- Bye~! -----")
+            return            
+
+#=============================================
+# 메인함수 호툴
+# start() 함수가 실질적인 메인함수임. 
+#=============================================
+if __name__ == '__main__':
+    start()
+
+}

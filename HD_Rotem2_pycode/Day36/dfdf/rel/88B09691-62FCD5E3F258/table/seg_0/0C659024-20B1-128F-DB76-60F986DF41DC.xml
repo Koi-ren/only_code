@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C659024-20B1-128F-DB76-60F986DF41DC" schemaObject="3D8F9A3E-F885-1643-9D4B-660532AE3302" name="SALGRADE">
+<sourceConnName>scott_tiger</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SALGRADE</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="GRADE" id="A72BEAD6-D111-2320-CA5C-2209173870AA">
+<sourceConnName>scott_tiger</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>GRADE</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOSAL" id="D05D8D0E-BD96-EE7F-DA6D-C44C9022F88A">
+<sourceConnName>scott_tiger</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>LOSAL</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HISAL" id="D5DEDB8A-5F8F-BB82-240E-EB0575C09341">
+<sourceConnName>scott_tiger</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>HISAL</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

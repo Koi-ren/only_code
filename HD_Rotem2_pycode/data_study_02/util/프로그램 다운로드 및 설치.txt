@@ -1,0 +1,10 @@
+1. R 최신버전 다운로드/설치
+   R 공식 사이트 : http://www.r-project.org
+   http://healthstat.snu.ac.kr/CRAN/
+
+2. R Studio 최신버전 다운로드/설치
+  https://www.rstudio.com/
+
+3. java jdk 다운로드/설치 - 32/64 bit 다운로드/설치 
+  - 기존에 설치된 경우 JDK 설치 경로만 확인
+   http://www.oracle.com

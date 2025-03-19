@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CB369005-AD78-F70F-B2D7-4E9D87913840" schemaObject="FD289506-098C-A81A-9490-DC6922A14DE1" name="ORDERS">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDERID" id="40C3445A-1289-3162-3670-FC2732942A4F">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDERID</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTID" id="6BE6270A-B0DC-15FF-2F19-202CAAE6C577">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>CUSTID</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD68406E-455C-77EE-6DAA-C1DE6B36A001" referredColumn="34B31B4A-CAC2-166A-B106-10B85A33C34F"/>
+</associations>
+</Column>
+<Column name="BOOKID" id="35E6F9BB-263C-6050-EC98-3C49E198DA4F">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>BOOKID</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A82EDD6-C2C5-8C71-C2F6-BD24B69E4AE9" referredColumn="0A95D22F-DBAD-F63F-4C53-52F837FD15F7"/>
+</associations>
+</Column>
+<Column name="SALEPRICE" id="489519BD-A836-7DB8-07DA-ADEF14691CAA">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>SALEPRICE</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,8,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDERDATE" id="BFC5C6F3-973E-E38E-2789-CED761E7CCB9">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDERDATE</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3331C914-2791-4D27-085A-596B20880E22" schemaObject="FD289506-098C-A81A-9490-DC6922A14DE1" name="ORDERS_PK">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>SYS_C007002</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40C3445A-1289-3162-3670-FC2732942A4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3372D2EB-52B8-4A91-6571-DD121BF071E3" name="SYS_C007003">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE6270A-B0DC-15FF-2F19-202CAAE6C577"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="980B6C58-0122-48B4-3F14-6A0EDCF4BD4E" name="SYS_C007004">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="35E6F9BB-263C-6050-EC98-3C49E198DA4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

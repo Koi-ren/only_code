@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FD68406E-455C-77EE-6DAA-C1DE6B36A001" containerWithKeyObject="CB369005-AD78-F70F-B2D7-4E9D87913840" localFKIndex="3372D2EB-52B8-4A91-6571-DD121BF071E3" name="SYS_C007003">
+<sourceConnName>%EB%A7%88%EB%8B%B9</sourceConnName>
+<sourceObjSchema>MADANG</sourceObjSchema>
+<sourceObjName>SYS_C007003</sourceObjName>
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:40:23 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<referredTableLongName>MADANG.CUSTOMER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CAFC2F2E-0B74-BB1E-76DE-65B0E4482EFF</referredTableID>
+<keyObject>6529DDC0-DB92-AC19-745C-B6A55A7A9926</keyObject>
+<referredKeyID>6529DDC0-DB92-AC19-745C-B6A55A7A9926</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CUSTID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

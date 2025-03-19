@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time GPS Tracking</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 600px;"></div>
+
+    <script>
+        var map = L.map('map').setView([0, 0], 13); // 초기 지도 위치 설정
+
+        // 지도 타일 레이어 추가
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        var arrowIcon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        // 초기화
+        var arrowMarker = L.marker([0, 0], { icon: arrowIcon }).addTo(map);
+        var line = L.polyline([], { color: 'blue' }).addTo(map);
+
+        function updateMap() {
+            // AJAX를 이용하여 서버로부터 좌표 받아오기
+            fetch('/coordinates')
+                .then(response => response.json())
+                .then(data => {
+                    var coordinates = data.coordinates;
+
+                    if (coordinates.length >= 2) {
+                        var prevCoord = coordinates[coordinates.length - 2];
+                        var currentCoord = coordinates[coordinates.length - 1];
+
+                        // 선 그리기
+                        line.addLatLng([prevCoord.latitude, prevCoord.longitude]);
+                        line.addLatLng([currentCoord.latitude, currentCoord.longitude]);
+
+                        // 화살표 갱신
+                        arrowMarker.setLatLng([currentCoord.latitude, currentCoord.longitude]);
+                    }
+                });
+        }
+
+        // 2초마다 지도 갱신
+        setInterval(updateMap, 2000);
+    </script>
+</body>
+</html>

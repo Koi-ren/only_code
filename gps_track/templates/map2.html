@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time GPS Map</title>
+    <!-- Folium CDN 추가 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+      integrity="sha384-TyGVF71ZdE2FV7UX3k0v+Fu1SRil5HpPfFQ8eLOd0PZZVfJyj4+AtOyX3mrXiqBb"
+      crossorigin=""
+    />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+8Q3vE0+kgLd5yXaxgG7dFbHq8E3IcZLSVaCkHr" crossorigin=""></script>
+</head>
+<body>
+    <div id="map" style="height: 100vh;"></div>
+
+    <script>
+        var map = L.map('map').setView([{{ latitude }}, {{ longitude }}], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        var marker = L.marker([{{ latitude }}, {{ longitude }}]).addTo(map);
+
+        function updateMap(latitude, longitude) {
+            map.setView([latitude, longitude], 15);
+            marker.setLatLng([latitude, longitude]);
+        }
+
+        // 5초마다 업데이트
+        setInterval(function() {
+            fetch('/').then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                updateMap(data.latitude, data.longitude);
+            });
+        }, 500);
+    </script>
+</body>
+</html>

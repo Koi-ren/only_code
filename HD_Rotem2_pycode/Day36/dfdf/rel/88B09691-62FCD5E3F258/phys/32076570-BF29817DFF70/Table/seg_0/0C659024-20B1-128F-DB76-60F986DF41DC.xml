@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="SALGRADE" directorySegmentName="seg_0" id="0C659024-20B1-128F-DB76-60F986DF41DC">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<schemaObject>3D8F9A3E-F885-1643-9D4B-660532AE3302</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>CC006C59-8E51-1A04-548A-9ED20F564C9C</segment>
+<tableSpace>2A3EEFD5-D89F-B55A-79B2-2906C29F1EA9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="GRADE" id="A72BEAD6-D111-2320-CA5C-2209173870AA">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOSAL" id="D05D8D0E-BD96-EE7F-DA6D-C44C9022F88A">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HISAL" id="D5DEDB8A-5F8F-BB82-240E-EB0575C09341">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-12 06:53:29 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev11g>

@@ -1,0 +1,26 @@
+import math
+
+def calculate_bearing(lat1, lon1, lat2, lon2):
+    """각도 계산 함수 (북쪽을 0도, 동쪽을 90도로 설정)"""
+    lat1_rad = math.radians(lat1)
+    lon1_rad = math.radians(lon1)
+    lat2_rad = math.radians(lat2)
+    lon2_rad = math.radians(lon2)
+
+    dlon = lon2_rad - lon1_rad
+
+    x = math.sin(dlon) * math.cos(lat2_rad)
+    y = math.cos(lat1_rad) * math.sin(lat2_rad) - (math.sin(lat1_rad) * math.cos(lat2_rad) * math.cos(dlon))
+
+    initial_bearing = math.atan2(x, y)
+    initial_bearing = math.degrees(initial_bearing)
+    compass_bearing = (initial_bearing + 360) % 360
+    return compass_bearing
+
+lat1 = 35.1201516
+lon1 = 129.1019481
+lat2 = 35.1201447
+lon2 = 129.1019379
+
+bearing = calculate_bearing(lat1, lon1, lat2, lon2)
+print(bearing)

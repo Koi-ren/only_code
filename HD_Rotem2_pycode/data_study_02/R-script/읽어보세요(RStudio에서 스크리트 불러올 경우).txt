@@ -1,0 +1,4 @@
+RStudio에서 스크립트 파일을 불러올 경우
+메뉴 [Tools] -> [Global Options] 메뉴 선택 
+Options 대화상자의 Code 카테고리 선택 후
+Saving 탭에서 Default text encoding : UTF-8로 선택하십시오.  

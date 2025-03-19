@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="dfdf" id="43815CC4-9E33-E8C2-AEAA-FE8177241F30" version="3.5">
+<createdBy>plane</createdBy>
+<createdTime>2025-02-11 02:02:56 UTC</createdTime>
+<ownerDesignName>dfdf</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>43815CC4-9E33-E8C2-AEAA-FE8177241F30</designId>
+</OSDM_Design>

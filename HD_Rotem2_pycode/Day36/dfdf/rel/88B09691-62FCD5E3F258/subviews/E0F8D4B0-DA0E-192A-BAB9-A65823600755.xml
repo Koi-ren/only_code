@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_3" id="E0F8D4B0-DA0E-192A-BAB9-A65823600755">
+<createdBy>plane</createdBy>
+<modifiedBy>plane</modifiedBy>
+<createdTime>2025-02-12 06:52:43 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="0C659024-20B1-128F-DB76-60F986DF41DC" otype="Table" vid="2437DE14-175C-59A4-9F19-14222228D712">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="445" y="245" width="139" height="68"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="35E8DE57-B15E-E681-24CA-963706FCC929" otype="Table" vid="1B3A1D95-CF61-19FB-3E5A-ECAAC19CF178">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="164" y="301" width="142" height="40"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="65EEC0F9-B982-9E24-3DC4-CDFDCD014597" otype="Table" vid="0E61998E-7CF2-057E-6EBF-1281760E1F87">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="280" y="370" width="218" height="138"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="C7182A86-B406-484E-837A-1FCE1D049BA6" otype="Table" vid="386938C5-7AAA-47AA-5051-0D186746D4ED">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="272" y="100" width="203" height="82"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="E459CF24-670F-2DC3-BA91-708BBAA54F04" otype="Table" vid="AAABD095-5BC1-1012-0513-E2E1388A8CBE">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="99" y="204" width="209" height="68"/>
+</OView>
+</objectViews>
+</Diagram>

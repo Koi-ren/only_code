@@ -1,0 +1,22 @@
+CREATE TABLE 회원(회원번호 VARCHAR(5), 이름 VARCHAR(5), 동번호 CHAR(3));
+CREATE TABLE 대출(회원번호 VARCHAR(5), 대출일 DATE, 도서명 VARCHAR(20), 반납여부
+VARCHAR(2));
+INSERT INTO 회원 VALUES('m1', '배충성', '101');
+INSERT INTO 회원 VALUES('m2', '이소망', '102');
+INSERT INTO 회원 VALUES('m3', '오믿음', '107');
+INSERT INTO 회원 VALUES('m4', '최사랑', '111');
+INSERT INTO 대출 VALUES('m1', '2023-01-02', '성과를 향한 도전','O');
+INSERT INTO 대출 VALUES('m1', '2023-01-02', '취업의 비밀','O');
+INSERT INTO 대출 VALUES('m3', '2023-01-03', '부의 추월차선','O');
+INSERT INTO 대출 VALUES('m3', '2023-01-03', '면접 평범이 스펙이다','X');
+INSERT INTO 대출 VALUES('m4', '2023-01-04', '부의 추월차선','X');
+INSERT INTO 대출 VALUES('m2', '2023-01-05', '설득의 심리학','O');
+INSERT INTO 대출 VALUES('m3', '2023-01-13', '청소부 밥','X');
+
+
+SELECT DISTINCT 이름 FROM 회원, 대출 WHERE 회원.회원번호 = 대출.회원번호;
+
+
+SELECT 이름, 대출일
+FROM 회원, 대출
+WHERE 회원.회원번호 = 대출.회원번호 AND 도서명 = '부의 추월차선' AND 반납여부 = 'X';

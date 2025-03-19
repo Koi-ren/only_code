@@ -1,0 +1,25 @@
+  File "/home/xytron/xycar_ws/src/auto_drive/src/lane_track_drive.py", line 210, in process_image
+    slope_degree = (np.arctan2(line_arr[:,1] - line_arr[:,3], line_arr[:,0] - line_arr[:,2]) * 180) / np.pi
+IndexError: too many indices for array
+
+  File "/home/xytron/xycar_ws/src/auto_drive/src/lane_track_drive.py", line 129, in get_fitline
+    x1, y1 = int(((img.shape[0]-1)-y)/vy*vx + x) , img.shape[0]-1
+ValueError: cannot convert float NaN to integer
+->
+# 해결방안 1
+# 예시 1: 분모가 0이 되지 않도록 확인
+if vy != 0:
+    x1, y1 = int(((img.shape[0]-1)-y)/vy*vx + x), img.shape[0]-1
+else:
+    # vy가 0이면 적절한 대처
+    x1, y1 = 0, 0  # 예시로 0으로 대처했으며, 상황에 따라 다르게 처리 가능
+
+# 예시 2: NaN을 방지하기 위한 조건문 추가
+if not (numpy.isnan(vx) or numpy.isnan(vy) or numpy.isnan(x) or numpy.isnan(y)):
+    x1, y1 = int(((img.shape[0]-1)-y)/vy*vx + x), img.shape[0]-1
+else:
+    # NaN이 발생하면 적절한 대처
+    x1, y1 = 0, 0  # 예시로 0으로 대처했으며, 상황에 따라 다르게 처리 가능
+
+L_lines, R_lines = L_lines[:,None], R_lines[:,None]
+UnboundLocalError: local variable 'L_lines' referenced before assignment
